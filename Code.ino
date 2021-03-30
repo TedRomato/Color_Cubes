@@ -11,9 +11,9 @@ const uint16_t LED_COUNT = 16;
 
 int mode_but_pin = 12;
 
-const uint8_t diodesInNode = 4;
+const uint8_t nodeAmount =  4;
 
-const uint8_t nodeAmount =  LED_COUNT/diodesInNode;
+const uint8_t diodesInNode = LED_COUNT/nodeAmount;
 
 double nodeColors[nodeAmount*3];
 
