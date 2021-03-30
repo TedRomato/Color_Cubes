@@ -19,11 +19,13 @@ see the footage folder for some inspiration.</p>
     <li>
       <h3>Components:</h3>
       <ul>
-        <li>3D Printer</li>
-        <li>Black PLA</li>
-        <li>White PLA</li>
-        <li>Gluegun</li>
-        <li>Power source for your board</li>
+        <li>Arduino UNO/Nano or any other arduino compatible board</li>
+        <li>2x 10k potenciometers</li>
+        <li>(any amount divisible by 4) Neopixel RGB leds (you can grab some here: https://www.adafruit.com/product/1655)</li>
+        <li>2x 10k resistors</li>
+        <li>2x 1k resistors</li>
+        <li>1x lever switch</li>
+        <li>Cables</li>
       </ul>
     </li>
   </ul>
