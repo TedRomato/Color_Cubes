@@ -85,7 +85,7 @@ void loop() {
     if(prevMode != mode){
       //if mode was changed in this itteration to dynamic
       //set brigtness, speed and pattern locations
-      doSetUp(custom,4);
+      doDynamicSetUp(custom,4);
       prevMode = mode;
     }
     //map values from analogs
@@ -97,7 +97,7 @@ void loop() {
   pixels.show();
 }
 
-void doSetUp(uint8_t pattern[], uint8_t patternSteps){
+void doDynamicSetUp(uint8_t pattern[], uint8_t patternSteps){
   int patternLocation = 0;
   for(uint16_t i = 0; i < nodeAmount; i++){
     diodePatternLocations[i] = patternLocation;
@@ -115,11 +115,14 @@ void doSetUp(uint8_t pattern[], uint8_t patternSteps){
 }
 
 void useColorPattern(uint8_t pattern[], uint8_t patternSteps){
+  //loops through color pattern for all nodes
   for(uint16_t i = 0; i < nodeAmount; i++){
     makeNodePatternStep(i,pattern,patternSteps,changeVal);
   }
 }
 
+
+//shifts color of each node bit closer to next color in pattern  
 void makeNodePatternStep(uint8_t i, uint8_t pattern[], uint8_t patternSteps, uint8_t changeVal){
   if(changeNodeColor(i,pattern[diodePatternLocations[i]*3],pattern[diodePatternLocations[i]*3 + 1], pattern[diodePatternLocations[i]*3 + 2], changeVal)){
     diodePatternLocations[i]++;
@@ -133,6 +136,8 @@ void makeNodePatternStep(uint8_t i, uint8_t pattern[], uint8_t patternSteps, uin
   } 
 }
 
+//Changes the color for some amount = current color moves a bit closer to next color on pattern
+//returns true when reaches next pattern color
 bool changeNodeColor(uint16_t n, uint8_t goalR, uint8_t goalG, uint8_t goalB, int value){
   double differenceR = goalR - nodeColors[n*3];
   double differenceG = goalG - nodeColors[n*3 + 1];
@@ -188,15 +193,18 @@ bool numberIsBetween(double n, double side1, double side2){
   return ((n < side1 && n > side2) || (n > side1 && n < side2));
 }
 
+//sets color from to node
 void updateRGB(int val, uint16_t node){
 
   uint8_t r = 0;
   uint8_t g = 0;
   uint8_t b = 0;
 
+  //full circle is how many units it takes to around color pie 
   int fullSpectrumCircle = 333;
   int maxHue = 1023/fullSpectrumCircle;
   
+  //the bigger the hue the lighter the color
   int hue = val / fullSpectrumCircle; 
   int colorVal = map(val - hue*fullSpectrumCircle,0,fullSpectrumCircle,0,765);
   
@@ -219,7 +227,7 @@ void updateRGB(int val, uint16_t node){
     r = 0;
   }
   
-  
+  //alters hue so it doesnt get too white too fast
   double value = (double) hue/maxHue;
   if(value != 1){
     value /= 1.5;
@@ -235,6 +243,7 @@ void updateRGB(int val, uint16_t node){
   custom[node*3 + 1] = g;
   custom[node*3 + 2] = b;
   
+  //sets color
   for(uint16_t x = 0; x < diodesInNode;x++){
     pixels.setPixelColor(node*diodesInNode + x,r,g,b);  
   }      
