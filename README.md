@@ -29,6 +29,8 @@ see the footage folder for some inspiration. <br>Note: I used white pla instead 
       </ul>
     </li>
   </ul>
+  <h2>Diagram:</h2>
+  <img src="https://github.com/TedRomato/Color_Cubes/blob/main/Schematic_Cubes_2021-03-30.png" width="480px">
   <h2>Putting it all together:</h2>
   <p>First we print our parts -> inner lamp, outer lamp and your control box parts. Then, we decide how many led's do we want to have in each cube. The more led's the more it shines.
 Alter Code.ino LED_COUNT variable so it maches with amount of diodes you use.
