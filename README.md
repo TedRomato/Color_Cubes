@@ -8,7 +8,7 @@
   <h2>Printer:</h2>
   <p>I used my Ender 3 for this print. I used white pla for outer part, so led's can glow through it, and black pla for the inner part, so the colors don't mix between cubes.
 Unfortunately, I lost files for the control box, so I can't provide STL's, but it should be fairly simple to make. Youcan even go fancy, and make it out of wood. You can
-see the footage folder for some inspiration.</p>
+see the footage folder for some inspiration. <br>Note: I used white pla instead of black forr inner parts of lamp, because I ran out of black one.</p>
   <h2>What do I need for printing:</h2>
   <ul>
     <li>3D Printer</li>
