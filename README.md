@@ -1,5 +1,5 @@
 # Color_Cubes
-
+  <h1>What is this?</h1>
   <h1>Code and resources to build potenciometer controlled color cubes.</h1>
   <h2>How to control:</h2>
    <p>There are two modes: static and dynamic. You can switch between those two using lever switch. In static mode you can change color of individual cubes, with pots. One sets   which cube is being set and second one is used to select color. When you switch to dynamic mode, colors start to change using your pattern made in static mode. Once in  static mode pot one changes brightness and second one changes speed.</p>
