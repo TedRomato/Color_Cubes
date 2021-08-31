@@ -1,7 +1,7 @@
 # Color_Cubes
   <h1>What are color cubes:</h1>
    <p>Color cubes is an rgb lamp, but unlike other rgb lamps, it has got 2 working modes and more intuitive controls. The lamp is composed of 4 individual nodes. You can set   color for each node, to get just the color combination, that suits your current mood. If you are tired of watching static colors, you could change lamp mode to dynamic, which makes your colors move smoothly throughout all nodes, while still keeping your color selection.</p>
-   <p>You can finf more images in Footage folder.</p>
+   <p>You can find more images in Footage folder.</p>
   <img src="https://github.com/TedRomato/Color_Cubes/blob/main/Footage/color_cubes_dar_cropped2.gif" width="320px">
   <h1>Code and resources to build potenciometer controlled color cubes.</h1>
   <h2>How to control:</h2>
